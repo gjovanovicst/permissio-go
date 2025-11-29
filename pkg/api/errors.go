@@ -2,7 +2,7 @@ package api
 
 import "fmt"
 
-// PermisError represents an error from the Permis.io API.
+// PermisError represents an error from the Permissio.io API.
 type PermisError struct {
 	// Message is the error message.
 	Message string

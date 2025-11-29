@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/permisio/permisio-go/pkg/config"
-	"github.com/permisio/permisio-go/pkg/models"
+	"github.com/permissio/permissio-go/pkg/config"
+	"github.com/permissio/permissio-go/pkg/models"
 )
 
 // RoleAssignmentsAPI provides methods for managing role assignments.

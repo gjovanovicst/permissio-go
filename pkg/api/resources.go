@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/permisio/permisio-go/pkg/config"
-	"github.com/permisio/permisio-go/pkg/models"
+	"github.com/permissio/permissio-go/pkg/config"
+	"github.com/permissio/permissio-go/pkg/models"
 )
 
 // ResourcesAPI provides methods for managing resources.

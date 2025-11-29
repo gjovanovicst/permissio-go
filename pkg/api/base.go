@@ -1,4 +1,4 @@
-// Package api provides API client implementations for the Permis.io SDK.
+// Package api provides API client implementations for the Permissio.io SDK.
 package api
 
 import (
@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/permisio/permisio-go/pkg/config"
+	"github.com/permissio/permissio-go/pkg/config"
 	"go.uber.org/zap"
 )
 

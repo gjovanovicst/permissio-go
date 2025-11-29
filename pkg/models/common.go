@@ -1,4 +1,4 @@
-// Package models provides data types for the Permis.io SDK.
+// Package models provides data types for the Permissio.io SDK.
 package models
 
 // ListParams represents common pagination parameters for list operations.
