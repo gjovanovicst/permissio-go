@@ -1,4 +1,4 @@
-// Package main demonstrates the Permis.io Go SDK with Gin middleware.
+// Package main demonstrates the Permissio.io Go SDK with Gin middleware.
 package main
 
 import (
@@ -6,14 +6,14 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/permisio/permisio-go/pkg/config"
-	"github.com/permisio/permisio-go/pkg/enforcement"
-	"github.com/permisio/permisio-go/pkg/models"
-	"github.com/permisio/permisio-go/pkg/permit"
+	"github.com/permissio/permissio-go/pkg/config"
+	"github.com/permissio/permissio-go/pkg/enforcement"
+	"github.com/permissio/permissio-go/pkg/models"
+	"github.com/permissio/permissio-go/pkg/permissio"
 	"go.uber.org/zap"
 )
 
-var permisClient *permit.Client
+var permisClient *permissio.Client
 
 // UserIn represents the input for user registration.
 type UserIn struct {
@@ -39,14 +39,14 @@ func main() {
 		WithLogger(logger).
 		Build()
 
-	permisClient = permit.NewPermit(cfg)
+	permisClient = permissio.New(cfg)
 
 	// Create Gin router
 	router := gin.Default()
 
 	// Health check endpoint
 	router.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{"message": "Hello, Gin with Permis.io!"})
+		c.JSON(http.StatusOK, gin.H{"message": "Hello, Gin with Permissio.io!"})
 	})
 
 	// Register new user
@@ -88,7 +88,7 @@ func registerUserHandler(c *gin.Context) {
 		return
 	}
 
-	// Create user in Permis.io
+	// Create user in Permissio.io
 	createUser := models.NewUserCreate(user.Email).
 		SetEmail(user.Email).
 		SetFirstName(user.FirstName).

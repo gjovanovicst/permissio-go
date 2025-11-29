@@ -1,4 +1,4 @@
-// Package main demonstrates basic usage of the Permis.io Go SDK.
+// Package main demonstrates basic usage of the Permissio.io Go SDK.
 package main
 
 import (
@@ -7,10 +7,10 @@ import (
 	"log"
 	"os"
 
-	"github.com/permisio/permisio-go/pkg/config"
-	"github.com/permisio/permisio-go/pkg/enforcement"
-	"github.com/permisio/permisio-go/pkg/models"
-	"github.com/permisio/permisio-go/pkg/permit"
+	"github.com/permissio/permissio-go/pkg/config"
+	"github.com/permissio/permissio-go/pkg/enforcement"
+	"github.com/permissio/permissio-go/pkg/models"
+	"github.com/permissio/permissio-go/pkg/permissio"
 	"go.uber.org/zap"
 )
 
@@ -34,7 +34,7 @@ func main() {
 		Build()
 
 	// Create client
-	client := permit.NewPermit(cfg)
+	client := permissio.New(cfg)
 	ctx := context.Background()
 
 	// Initialize the client (fetches project/environment scope from API key)

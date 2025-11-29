@@ -1,6 +1,6 @@
-# Permis.io Go SDK
+# Permissio.io Go SDK
 
-The official Go SDK for [Permis.io](https://permis.io) - a powerful authorization service for managing roles, permissions, and access control.
+The official Go SDK for [Permissio.io](https://permissio.io) - a powerful authorization service for managing roles, permissions, and access control.
 
 ## Installation
 
@@ -20,7 +20,7 @@ import (
 
 	"github.com/permissio/permissio-go/pkg/config"
 	"github.com/permissio/permissio-go/pkg/enforcement"
-	"github.com/permissio/permissio-go/pkg/permit"
+	"github.com/permissio/permissio-go/pkg/permissio"
 )
 
 func main() {
@@ -30,7 +30,7 @@ func main() {
 		WithEnvironmentID("your-environment-id").
 		Build()
 
-	client := permit.NewPermit(cfg)
+	client := permissio.New(cfg)
 
 	// Check permissions
 	user := enforcement.UserBuilder("user@example.com").Build()
@@ -55,7 +55,7 @@ If you don't provide `projectId` and `environmentId`, the SDK will automatically
 
 ```go
 cfg := config.NewConfigBuilder("permis_key_your_api_key_here").Build()
-client := permit.NewPermit(cfg)
+client := permissio.New(cfg)
 
 // The SDK will automatically fetch projectId and environmentId
 // from the /v1/api-key/scope endpoint on first API call
@@ -63,7 +63,7 @@ client := permit.NewPermit(cfg)
 
 ## API Management
 
-The SDK provides full CRUD access to all Permis.io resources:
+The SDK provides full CRUD access to all Permissio.io resources:
 
 ```go
 ctx := context.Background()
@@ -98,10 +98,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/permissio/permissio-go/pkg/config"
 	"github.com/permissio/permissio-go/pkg/enforcement"
-	"github.com/permissio/permissio-go/pkg/permit"
+	"github.com/permissio/permissio-go/pkg/permissio"
 )
 
-var permisClient *permit.Client
+var permisClient *permissio.Client
 
 func AuthMiddleware(action, resourceType string) gin.HandlerFunc {
 	return func(c *gin.Context) {
@@ -134,7 +134,7 @@ func AuthMiddleware(action, resourceType string) gin.HandlerFunc {
 
 func main() {
 	cfg := config.NewConfigBuilder("permis_key_your_api_key_here").Build()
-	permisClient = permit.NewPermit(cfg)
+	permisClient = permissio.New(cfg)
 
 	router := gin.Default()
 
@@ -151,7 +151,7 @@ func main() {
 
 | Option | Description | Default |
 |--------|-------------|---------|
-| `WithApiUrl(url)` | Set the API base URL | `https://api.permis.io` |
+| `WithApiUrl(url)` | Set the API base URL | `https://api.permissio.io` |
 | `WithProjectID(id)` | Set the project ID | Auto-fetched |
 | `WithEnvironmentID(id)` | Set the environment ID | Auto-fetched |
 | `WithTimeout(duration)` | Set request timeout | 30 seconds |

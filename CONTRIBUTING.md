@@ -1,6 +1,6 @@
-# Contributing to Permis.io Go SDK
+# Contributing to Permissio.io Go SDK
 
-Thank you for your interest in contributing to the Permis.io Go SDK! This document provides guidelines and steps for contributing.
+Thank you for your interest in contributing to the Permissio.io Go SDK! This document provides guidelines and steps for contributing.
 
 ## Code of Conduct
 

@@ -1,4 +1,4 @@
-// Package config provides configuration types and utilities for the Permis.io SDK.
+// Package config provides configuration types and utilities for the Permissio.io SDK.
 package config
 
 import (
@@ -11,8 +11,8 @@ import (
 )
 
 const (
-	// DefaultAPIURL is the default Permis.io API URL.
-	DefaultAPIURL = "https://api.permis.io"
+	// DefaultAPIURL is the default Permissio.io API URL.
+	DefaultAPIURL = "https://api.permissio.io"
 
 	// DefaultTimeout is the default request timeout.
 	DefaultTimeout = 30 * time.Second
@@ -29,7 +29,7 @@ type Config struct {
 	// Token is the API key for authentication (required).
 	Token string
 
-	// ApiURL is the base URL for the Permis.io API.
+	// ApiURL is the base URL for the Permissio.io API.
 	ApiURL string
 
 	// ProjectID is the project identifier.
